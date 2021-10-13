@@ -1,0 +1,22 @@
+.board{
+    display: grid;
+    grid-template-rows: 200px 200px 200px;
+    grid-template-columns: 200px 200px 200px;
+}
+
+.newGame{
+    text-align: center;
+    padding: 0.7em;
+    background-color: lightgray;
+    color: rgb(58, 58, 58);
+    font-weight: 900;
+}
+
+.winner{
+    text-align: center;
+    padding: 0.3em;
+    background-color: lightgray;
+    color: rgb(58, 58, 58);
+    font-weight: 900;
+    font-size: xx-large;
+}
