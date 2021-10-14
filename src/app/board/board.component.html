@@ -1,5 +1,8 @@
-<div *ngIf="isWon" class="winner">
+<div *ngIf="isWon" class="result">
   {{isX ? 'O' : 'X'}} Wins!
+</div>
+<div *ngIf="isDraw" class="result">
+  Draw!
 </div>
 <div class="board">
   <app-tile (turn)="onClick($event)" [isX]="isX" [position]="i" *ngFor="let i of [0, 1, 2, 3, 4, 5, 6, 7, 8]"></app-tile>

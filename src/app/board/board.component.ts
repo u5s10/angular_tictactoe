@@ -16,6 +16,7 @@ export class BoardComponent implements OnInit {
 
   isX: boolean = true;
   isWon: boolean = false;
+  isDraw: boolean = false;
   move: number = 0;
   board: number[] = Array(9).fill(0);
 
@@ -28,15 +29,18 @@ export class BoardComponent implements OnInit {
     this.board = Array(9).fill(0);
     this.move = 0;
     this.isWon = false;
+    this.isDraw = false;
   }
 
   onClick(tile: Tile): void {
     this.isX = tile.turn;
     this.board[tile.position] = tile.turn ? 1 : 2;
     if(this.checkForWinner()){
-      console.log(`${this.isX ? 'O' : 'X'} Won!`);
       this.tiles.forEach(t => t.wasClicked = true);
       this.isWon = true;
+    }
+    if(!this.checkForWinner() && this.move === 8){
+      this.isDraw = true;
     }
     this.move++;
   }
